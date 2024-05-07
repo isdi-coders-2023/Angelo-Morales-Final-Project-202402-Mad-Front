@@ -6,7 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test:prod": "jest  --passWithNoTests --coverage",
+    "test:prod": "ng test --code-coverage --no-watch --browsers=ChromeHeadless",
     "test": "ng test",
     "lint": "ng lint",
     "prepare": "husky"
@@ -21,7 +21,6 @@
     "@angular/platform-browser": "^17.3.0",
     "@angular/platform-browser-dynamic": "^17.3.0",
     "@angular/router": "^17.3.0",
-    "husky": "^9.0.11",
     "jwt-decode": "^4.0.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
@@ -40,9 +39,7 @@
     "@typescript-eslint/eslint-plugin": "7.2.0",
     "@typescript-eslint/parser": "7.2.0",
     "eslint": "^8.57.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-config-xo": "^0.45.0",
-    "eslint-config-xo-typescript": "^4.0.0",
+    "husky": "^9.0.11",
     "jasmine-core": "~5.1.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
@@ -50,6 +47,6 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
     "karma-mocha-reporter": "^2.2.5",
-    "typescript": "^5.4.5"
+    "typescript": "~5.4.2"
   }
 }
