@@ -35,7 +35,6 @@ describe('StateService', () => {
   });
 
   it('should call setLogin with stored token from localStorage', () => {
-    // Setup
     const storedToken = 'mockStoredToken';
     localStorage.setItem('TFD', storedToken);
     const setLoginSpy = spyOn(stateService, 'setLogin').and.callThrough();
