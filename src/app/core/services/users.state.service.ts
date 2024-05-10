@@ -32,13 +32,12 @@ const initialState: State = {
   providedIn: 'root',
 })
 export class UsersStateService {
+  jwtDecode = jwtDecode;
   private state$ = new BehaviorSubject<State>(initialState);
   private repoUsers = inject(RepoUsersService);
   constructor() {
     const tokenValid = localStorage.getItem('frontend');
-    if (!tokenValid) {
-      return;
-    }
+
     this.state$.next({
       ...this.state$.value,
       loginState: 'logged',
@@ -58,7 +57,7 @@ export class UsersStateService {
   }
 
   setLogin(token: string) {
-    const currentPayload = jwtDecode(token) as Payload;
+    const currentPayload = this.jwtDecode(token) as Payload;
     localStorage.setItem('frontend', token);
     this.repoUsers.getById(currentPayload.id).subscribe((user) => {
       this.state$.next({
