@@ -3,6 +3,7 @@ import { JwtPayload, jwtDecode } from 'jwt-decode';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { RepoUsersService } from './repo.users.service';
 import { Watch } from '../models/watchs.model';
+import { WatchsRepoService } from './watchs.repo.service';
 
 export type LoginState = 'idle' | 'logged' | 'error';
 
@@ -35,6 +36,7 @@ export class UsersStateService {
   jwtDecode = jwtDecode;
   private state$ = new BehaviorSubject<State>(initialState);
   private repoUsers = inject(RepoUsersService);
+  private repoWatchs = inject(WatchsRepoService);
   constructor() {
     const tokenValid = localStorage.getItem('frontend');
 
@@ -54,6 +56,15 @@ export class UsersStateService {
 
   setLoginState(loginState: LoginState): void {
     this.state$.next({ ...this.state$.value, loginState });
+  }
+
+  constructImageUrl(url: string, width: string, height: string) {
+    const urlParts = url.split('/upload/');
+    const firstPart = urlParts[0] + '/upload/';
+    const secondPart = urlParts[1];
+    return (
+      firstPart + 'c_fill,' + 'w_' + width + ',h_' + height + '/' + secondPart
+    );
   }
 
   setLogin(token: string) {
@@ -77,6 +88,12 @@ export class UsersStateService {
       loginState: 'idle',
       token: null,
       currentPayload: null,
+    });
+  }
+
+  loadWatchs() {
+    this.repoWatchs.getWatch().subscribe((watchs) => {
+      this.state$.next({ ...this.state$.value, watchs });
     });
   }
 }

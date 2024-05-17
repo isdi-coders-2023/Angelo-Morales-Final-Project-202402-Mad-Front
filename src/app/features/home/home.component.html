@@ -1,6 +1,4 @@
-<app-header>
-  <app-menu [items]="items" />
-</app-header>
+<app-header />
 <main>
   <section class="textandimg">
     <div class="text-frente">
@@ -19,11 +17,13 @@
   </section>
   <section class="container-relojs">
     <div class="reloj1">
-      <img
-        src="../../../assets/img-home/audemars-phone-sin--.png"
-        alt="img reloj 1"
-        width="78"
-      />
+      <a [routerLink]="['/createWatch']" routerLinkActive="router-link-active">
+        <img
+          src="../../../assets/img-home/audemars-phone-sin--.png"
+          alt="img reloj 1"
+          width="78"
+        />
+      </a>
     </div>
     <div class="reloj2">
       <img
@@ -72,7 +72,9 @@
     </div>
   </section>
   <section class="btn-mostrar-relojes">
-    <button>Mostrar Todos</button>
+    <a [routerLink]="['/watchs']" routerLinkActive="router-link-active">
+      Mostrar Todos
+    </a>
   </section>
 </main>
 <app-footer />

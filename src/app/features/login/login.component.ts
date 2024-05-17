@@ -4,6 +4,7 @@ import { RepoUsersService } from '../../core/services/repo.users.service';
 import { UsersStateService } from '../../core/services/users.state.service';
 import { HeaderComponent } from '../shared/header/header.component';
 import { UserLogin } from '../../core/models/users.models';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -23,17 +24,24 @@ import { UserLogin } from '../../core/models/users.models';
         </div>
 
         <button type="submit" [disabled]="formLogin.invalid">entrar</button>
+
+        <div class="enlaceRegister">
+          <p>aun no tienes cuenta ?</p>
+          <a [routerLink]="['/register']" routerLinkActive="router-link-active">
+            Registrate aqui!
+          </a>
+        </div>
       </form>
-      <a href="" class="olvidar-contraseña">He olvidado mi contraseña</a>
     </div>
   `,
   styleUrl: './login.component.css',
-  imports: [ReactiveFormsModule, HeaderComponent],
+  imports: [ReactiveFormsModule, HeaderComponent, RouterLink],
 })
 export default class LoginComponent {
   private repo = inject(RepoUsersService);
   private state = inject(UsersStateService);
   private fb = inject(FormBuilder);
+  private router = inject(Router);
   formLogin = this.fb.group({
     email: ['', Validators.required],
     password: ['', Validators.required],
@@ -58,6 +66,6 @@ export default class LoginComponent {
       },
     });
 
-    // this.router.navigate(['/home']);
+    this.router.navigate(['/home']);
   }
 }

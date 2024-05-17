@@ -15,5 +15,21 @@ export const routes: Routes = [
     title: 'Registro',
     loadComponent: () => import('./features/register/register.component'),
   },
+  {
+    path: 'createWatch',
+    title: 'CrearReloj',
+    loadComponent: () =>
+      import('./features/create-watch/create-watch.component'),
+  },
+  {
+    path: 'watchs',
+    title: 'Catalogo',
+    loadComponent: () => import('./features/watchs/watchs.component'),
+  },
+  {
+    path: 'detailsWatch/:id',
+    title: 'Detalles',
+    loadComponent: () => import('./features/details/details.component'),
+  },
   { path: '**', redirectTo: 'home' },
 ];

@@ -1,0 +1,27 @@
+/* .listWatchs > ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.listWatchs > ul > li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+} */
+.listWatchs > ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.listWatchs > ul > li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
