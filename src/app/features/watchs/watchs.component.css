@@ -1,0 +1,41 @@
+.text-list-bloque1 {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+
+  .text-frente {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 28px;
+    margin-bottom: 15px;
+    font-family: "Arapey", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  .text1 {
+    font-size: 12px;
+  }
+  .text2 {
+    font-size: 35px;
+  }
+  .text3 {
+    font-size: 15px;
+  }
+
+  .reloj1-list {
+    display: flex;
+    flex-direction: row-reverse;
+    padding-left: 85px;
+  }
+}
+
+.relojs-bloque2 {
+  display: flex;
+  list-style-type: none;
+  text-align: center;
+  justify-content: center;
+  
+}

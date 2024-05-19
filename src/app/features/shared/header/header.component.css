@@ -1,0 +1,21 @@
+header {
+  background-color: #ffffff; /* Color de fondo del header */
+  padding: 10px; /* Espacio interno alrededor del contenido del header */
+  text-align: center; /* Centrar el contenido dentro del header */
+}
+
+header div {
+  display: flex; /* Utilizar flexbox para alinear los íconos horizontalmente */
+  justify-content: space-between; /* Espaciar uniformemente los íconos */
+  align-items: center;
+  max-width: 800px; /* Ancho máximo del contenido dentro del header */
+  margin: 0 auto; /* Centrar el contenido horizontalmente */
+}
+
+header img {
+  display: block;
+}
+
+header a {
+  display: block;
+}
