@@ -16,23 +16,28 @@ import { Component } from '@angular/core';
                   src="../../../assets/facebook.png"
                   alt="Facebook logo"
                   width="20px"
+                  height="20px"
               /></a>
             </li>
 
             <li>
-              <a href="#" target="_blank"
+              <a href="https://www.instagram.com/watchangelo/" target="_blank"
                 ><img
                   src="../../../assets/instagram.png"
                   alt="Instagram logo"
                   width="20px"
+                  height="20px"
               /></a>
             </li>
             <li>
-              <a href="#" target="_blank"
+              <a
+                href="https://www.linkedin.com/in/moralesangelo/"
+                target="_blank"
                 ><img
                   src="../../../assets/linkind.png"
                   alt="linkedin logo"
                   width="20px"
+                  height="20px"
               /></a>
             </li>
           </ul>

@@ -79,15 +79,7 @@ import { UsersStateService } from '../../core/services/users.state.service';
             <input type="text" formControlName="price" />
           </label>
         </div>
-        <!-- <div class="form-control-img">
-          <h2>Cargar Fotos</h2>
-          <hr />
-          <label>
-            <span>imagen *</span>
-            <br />
-            <input type="file" #image (change)="onFileChange()" />
-          </label>
-        </div> -->
+
         <button type="submit" [disabled]="editWatchForm.invalid">
           Actualizar
         </button>
@@ -135,23 +127,8 @@ export default class EditWatchComponent {
     });
   }
 
-  // onFileChange() {
-  //   const htmlElement: HTMLInputElement = this.image.nativeElement;
-  //   const file = htmlElement.files![0];
-  //   this.editWatchForm!.patchValue({ image: file });
-  // }
-
   onSubmit() {
     console.log(this.editWatchForm.value);
-    // const fd = new FormData();
-    // fd.append('brand', this.editWatchForm.value.brand);
-    // fd.append('model', this.editWatchForm.value.model);
-    // fd.append('size', this.editWatchForm.value.size);
-    // fd.append('image', this.editWatchForm.value.image);
-    // fd.append('cristal', this.editWatchForm.value.cristal);
-    // fd.append('waterResist', this.editWatchForm.value.waterResist);
-    // fd.append('machine', this.editWatchForm.value.machine);
-    // fd.append('price', this.editWatchForm.value.price);
 
     return this.repo
       .updateWatch(this.editWatchForm.value, this.watchId!)

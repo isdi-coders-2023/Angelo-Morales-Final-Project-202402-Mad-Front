@@ -80,10 +80,15 @@ import { WatchCreateDto } from '../../core/models/watchs.model';
         <div class="form-control-img">
           <h2>Cargar Fotos</h2>
           <hr />
-          <label>
-            <span>imagen *</span>
+          <label for="file-upload" class="custom-file-input">
+            <span>Cargar Imagen</span>
             <br />
-            <input type="file" #image (change)="onFileChange()" />
+            <input
+              id="file-upload"
+              type="file"
+              #image
+              (change)="onFileChange()"
+            />
           </label>
         </div>
         <button type="submit">Crear Reloj</button>
