@@ -1,3 +1,4 @@
+<!-- eslint-disable @angular-eslint/template/interactive-supports-focus -->
 <app-header />
 <main>
   <section class="textandimg">
@@ -15,9 +16,13 @@
       />
     </div>
   </section>
-  <section class="container-relojs">
+  <section
+    class="container-relojs"
+    [routerLink]="['/watchs']"
+    routerLinkActive="router-link-active"
+  >
     <div class="reloj1">
-      <a [routerLink]="['/createWatch']" routerLinkActive="router-link-active">
+      <a>
         <img
           src="../../../assets/img-home/audemars-phone-sin--.png"
           alt="img reloj 1"
@@ -26,11 +31,13 @@
       </a>
     </div>
     <div class="reloj2">
-      <img
-        src="../../../assets/img-home/rolex-home-phone-sin.png"
-        alt="img reloj 2"
-        width="87"
-      />
+      <a>
+        <img
+          src="../../../assets/img-home/rolex-home-phone-sin.png"
+          alt="img reloj 2"
+          width="87"
+        />
+      </a>
     </div>
     <div class="reloj3">
       <img
@@ -48,7 +55,11 @@
       height="180"
     />
   </section>
-  <section class="container-relojs-parte2">
+  <section
+    class="container-relojs-parte2"
+    [routerLink]="['/watchs']"
+    routerLinkActive="router-link-active"
+  >
     <div class="reloj1">
       <img
         src="../../../assets/img-home/audemars-phone-sin--.png"
@@ -72,9 +83,9 @@
     </div>
   </section>
   <section class="btn-mostrar-relojes">
-    <a [routerLink]="['/watchs']" routerLinkActive="router-link-active">
+    <button [routerLink]="['/watchs']" routerLinkActive="router-link-active">
       Mostrar Todos
-    </a>
+    </button>
   </section>
 </main>
 <app-footer />

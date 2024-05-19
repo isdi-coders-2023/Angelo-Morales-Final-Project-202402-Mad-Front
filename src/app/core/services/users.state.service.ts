@@ -4,6 +4,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { RepoUsersService } from './repo.users.service';
 import { Watch } from '../models/watchs.model';
 import { WatchsRepoService } from './watchs.repo.service';
+import { User } from '../models/users.models';
 
 export type LoginState = 'idle' | 'logged' | 'error';
 
@@ -17,7 +18,7 @@ export type State = {
   loginState: LoginState;
   token: string | null;
   currentPayload: Payload | null;
-  currentUser: unknown | null;
+  currentUser: User | null;
   watchs: Watch[];
 };
 
@@ -37,14 +38,20 @@ export class UsersStateService {
   private state$ = new BehaviorSubject<State>(initialState);
   private repoUsers = inject(RepoUsersService);
   private repoWatchs = inject(WatchsRepoService);
+
   constructor() {
     const tokenValid = localStorage.getItem('frontend');
 
-    this.state$.next({
-      ...this.state$.value,
-      loginState: 'logged',
-      token: tokenValid,
-    });
+    if (tokenValid) {
+      const currentPayload = this.jwtDecode(tokenValid) as Payload;
+      this.state$.next({
+        ...this.state$.value,
+        loginState: 'logged',
+        token: tokenValid,
+        currentPayload,
+      });
+      this.loadCurrentUser(currentPayload.id);
+    }
   }
   getState(): Observable<State> {
     return this.state$.asObservable();
@@ -67,10 +74,28 @@ export class UsersStateService {
     );
   }
 
+  deleteWatchId(id: string) {
+    this.repoWatchs.deleteWatch(id).subscribe((item) => {
+      const result = this.state.watchs.filter((data) => {
+        return data.id !== item.id;
+      });
+      this.state$.next({ watchs: result } as State);
+    });
+  }
+
+  loadCurrentUser(userId: string) {
+    this.repoUsers.getById(userId).subscribe((user: User) => {
+      this.state$.next({
+        ...this.state$.value,
+        currentUser: user,
+      });
+    });
+  }
+
   setLogin(token: string) {
     const currentPayload = this.jwtDecode(token) as Payload;
     localStorage.setItem('frontend', token);
-    this.repoUsers.getById(currentPayload.id).subscribe((user) => {
+    this.repoUsers.getById(currentPayload.id).subscribe((user: User) => {
       this.state$.next({
         ...this.state$.value,
         loginState: 'logged',

@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { environment } from '../../../environments/environment.development';
-import { UserCreateDto, UserLogin } from '../models/users.models';
+import { User, UserCreateDto, UserLogin } from '../models/users.models';
 
 @Injectable({
   providedIn: 'root',
@@ -15,7 +15,7 @@ export class RepoUsersService {
   }
 
   getById(id: string) {
-    return this.httpClient.get(this.url + '/' + id);
+    return this.httpClient.get<User>(this.url + '/' + id);
   }
 
   createUser(data: UserCreateDto) {

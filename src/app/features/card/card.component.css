@@ -1,0 +1,97 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-family: "Arapey", serif;
+  hr {
+    height: 2px;
+    margin-inline: 30px;
+    border-left: solid 40px #2d5674;
+    border-right: solid 40px #2d5674;
+  }
+}
+
+.textDetalles {
+  font-family: "Arapey", serif;
+  margin-block: 13px;
+}
+
+.cardBrandtext {
+  margin-block: 15px;
+}
+.block1-card {
+  padding-top: 20px;
+
+  display: flex;
+  align-items: center;
+  font-family: "Arapey", serif;
+  justify-content: space-around;
+}
+
+.card-detalles {
+  display: flex;
+  flex-direction: column;
+  font-family: "Arapey", serif;
+
+  .cardBrandtext {
+    color: #1f4864da;
+    font-size: 24px;
+  }
+}
+.card-propiedades {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-block: 20px;
+  gap: 8px;
+}
+
+.precio-and-text {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  margin-block: 15px;
+}
+.textPrice {
+  font-size: 27px;
+  color: rgba(33, 33, 33, 0.848);
+}
+
+.precio-and-text {
+  p {
+    font-size: 8px;
+  }
+}
+
+.btns-crud {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-inline: 70px;
+  margin-block: 6px;
+
+  button {
+    font-size: 11px;
+    background-color: rgb(249, 249, 249);
+    font-family: "Arapey", serif;
+    border-radius: 10px;
+    border-color: white;
+    margin-block: 20px;
+    gap: 20px;
+    color: #1f4864da;
+    padding-block: 8px;
+    padding-inline: 25px;
+    border: solid 1px #1f4864da;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+  }
+  button:hover {
+    box-shadow: 0px 3px 3px 0px rgb(0 0 0 / 55%);
+  }
+  button:active {
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    transform: translateY(2px);
+  }
+}

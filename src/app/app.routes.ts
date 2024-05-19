@@ -29,7 +29,23 @@ export const routes: Routes = [
   {
     path: 'detailsWatch/:id',
     title: 'Detalles',
-    loadComponent: () => import('./features/details/details.component'),
+    loadComponent: () => import('./features/card/card.component'),
   },
+  {
+    path: 'editar/:id',
+    title: 'edit',
+    loadComponent: () => import('./features/edit/edit.component'),
+  },
+  {
+    path: 'cesta/:id',
+    title: 'cesta',
+    loadComponent: () => import('./features/cesta/cesta.component'),
+  },
+  {
+    path: 'perfil',
+    title: 'profile',
+    loadComponent: () => import('./features/perfil/perfil.component'),
+  },
+
   { path: '**', redirectTo: 'home' },
 ];

@@ -1,0 +1,42 @@
+.relojesLista {
+  /* gap: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center; */
+  display: flex;
+  gap: 2px;
+  flex-direction: column;
+
+  img {
+    margin-block: 20px;
+  }
+  .textNuevo {
+    color: rgb(92, 92, 238);
+  }
+  .textBrand {
+    font-size: 20px;
+    font-family: "Arapey", serif;
+  }
+  .textPrice {
+    font-size: 23px;
+    color: rgba(39, 39, 39, 0.891);
+  }
+}
+/*
+.WatchCard > ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+} */
+
+.WatchCard {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

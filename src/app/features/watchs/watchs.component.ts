@@ -15,14 +15,14 @@ import { UsersStateService } from '../../core/services/users.state.service';
       <div class="text-frente">
         <p class="text1">Relojes - Clasicos -Elegantes</p>
         <p class="text2">Nuestros Relojes</p>
-        <p class="text3">Relojes</p>
+        <p class="text3">Nuevos</p>
       </div>
       <div class="reloj1-list">
         <img
           src="../../../assets/img-home/list-img1.png"
           alt="img de entrada"
           width="340"
-          height="180"
+          height="160"
         />
       </div>
     </section>

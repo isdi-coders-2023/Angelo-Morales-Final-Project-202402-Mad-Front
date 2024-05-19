@@ -4,11 +4,8 @@ import {
   HttpTestingController,
 } from '@angular/common/http/testing';
 import { RepoUsersService } from './repo.users.service';
-import { environment } from '../../../../src/environments/environment.development';
-import {
-  UserCreateDto,
-  UserLogin,
-} from '../../../app/core/models/users.models';
+import { environment } from '../../../environments/environment.development';
+import { UserCreateDto, UserLogin } from '../models/users.models';
 
 describe('RepoUsersService', () => {
   let service: RepoUsersService;
