@@ -82,5 +82,6 @@ export default class RegisterComponent {
         console.log(err);
       },
     });
+    this.router.navigate(['/home']);
   }
 }

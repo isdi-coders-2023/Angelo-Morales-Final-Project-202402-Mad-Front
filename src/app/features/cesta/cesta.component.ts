@@ -1,14 +1,19 @@
 import { Component, Input, OnInit, inject } from '@angular/core';
-import { Watch } from '../../core/models/watchs.model';
 import { UsersStateService } from '../../core/services/users.state.service';
-import { User } from '../../core/models/users.models';
+import { Watch } from '../../core/models/watchs.model';
 import { RouterLink } from '@angular/router';
+import { User } from '../../core/models/users.models';
+import { FooterComponent } from '../shared/footer/footer.component';
+import { HeaderComponent } from '../shared/header/header.component';
 
 @Component({
-  selector: 'app-details',
+  selector: 'app-cesta',
   standalone: true,
-  imports: [RouterLink],
-  template: ` @if (watchInfo) {
+  imports: [FooterComponent, HeaderComponent, RouterLink],
+  template: `
+    <app-header />
+    <p>Cesta</p>
+    @if (watchInfo) {
     <div class="WatchCard" [routerLink]="['/detailsWatch', watchInfo.id]">
       <img
         src="{{ this.state.constructImageUrl(watchInfo.image, '130', '180') }}"
@@ -23,10 +28,12 @@ import { RouterLink } from '@angular/router';
         <span class="textPrice">{{ watchInfo.price + '$' }}</span>
       </div>
     </div>
-    }`,
-  styleUrl: './details.component.css',
+    }
+    <app-footer />
+  `,
+  styleUrl: './cesta.component.css',
 })
-export default class DetailsComponent implements OnInit {
+export default class CestaComponent implements OnInit {
   state = inject(UsersStateService);
 
   @Input() watchInfo!: Watch;

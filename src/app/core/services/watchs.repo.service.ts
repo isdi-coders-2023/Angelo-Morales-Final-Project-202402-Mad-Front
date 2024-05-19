@@ -1,7 +1,7 @@
 import { Injectable, inject } from '@angular/core';
 import { environment } from '../../../environments/environment.development';
 import { HttpClient } from '@angular/common/http';
-import { Watch, WatchCreateDto, WatchUpdateDto } from '../models/watchs.model';
+import { Watch, WatchCreateDto } from '../models/watchs.model';
 
 @Injectable({
   providedIn: 'root',
@@ -23,13 +23,12 @@ export class WatchsRepoService {
     return this.httpClient.post(url, data);
   }
 
-  updateWatch(id: string, data: WatchUpdateDto) {
-    const url = this.url + '/';
-    return this.httpClient.patch(url + id, data);
+  updateWatch(data: FormData, id: string) {
+    return this.httpClient.patch<Watch>(this.url + '/' + id, data);
   }
 
   deleteWatch(id: string) {
     const url = this.url + '/';
-    return this.httpClient.delete(url + id);
+    return this.httpClient.delete<Watch>(url + id);
   }
 }

@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { HeaderComponent } from '../shared/header/header.component';
 import { FooterComponent } from '../shared/footer/footer.component';
 import MenuComponent from '../shared/menu/menu.component';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { UsersStateService } from '../../core/services/users.state.service';
 import { Watch } from '../../core/models/watchs.model';
 
@@ -15,6 +15,7 @@ import { Watch } from '../../core/models/watchs.model';
 })
 export default class HomeComponent {
   state = inject(UsersStateService);
+  router = inject(Router);
   watchs: Watch[] = [];
 
   constructor() {

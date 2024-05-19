@@ -1,0 +1,34 @@
+.profile-container {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 400px;
+  margin: 40px auto;
+  font-family: Arial, sans-serif;
+}
+
+.profile-container h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+  text-align: center;
+  border-bottom: 2px solid #f1f1f1;
+  padding-bottom: 10px;
+}
+
+.profile-container p {
+  margin: 10px 0;
+  font-size: 16px;
+  color: #555;
+}
+
+.profile-container p strong {
+  color: #333;
+}
+
+.loading {
+  text-align: center;
+  font-size: 18px;
+  color: #999;
+}
