@@ -85,6 +85,7 @@ export class UsersStateService {
 
   loadCurrentUser(userId: string) {
     this.repoUsers.getById(userId).subscribe((user: User) => {
+      console.log('clg user', user);
       this.state$.next({
         ...this.state$.value,
         currentUser: user,
