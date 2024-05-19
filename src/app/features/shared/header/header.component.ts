@@ -24,7 +24,7 @@ import { RouterLink } from '@angular/router';
           height="21"
         />
       </a>
-      <a href="">
+      <a>
         <img
           src="../../../../assets/angelologo.png"
           alt="logo angelo"
@@ -48,12 +48,12 @@ import { RouterLink } from '@angular/router';
             height="17"
           />
         </button>
-        <!-- Otros elementos del encabezado -->
       </div>
       <div class="dropdown-menu" [class.show]="isMenuOpen">
         <a [routerLink]="['/watchs']">Relojes</a>
         <a [routerLink]="['/createWatch']">Crear Reloj</a>
         <a [routerLink]="['/perfil']">Perfil</a>
+        <a [routerLink]="['/home']">Home</a>
       </div>
     </div>
   </header> `,
