@@ -43,14 +43,18 @@ export class UsersStateService {
     const tokenValid = localStorage.getItem('frontend');
 
     if (tokenValid) {
-      const currentPayload = this.jwtDecode(tokenValid) as Payload;
-      this.state$.next({
-        ...this.state$.value,
-        loginState: 'logged',
-        token: tokenValid,
-        currentPayload,
-      });
-      this.loadCurrentUser(currentPayload.id);
+      try {
+        const currentPayload = this.jwtDecode(tokenValid) as Payload;
+        this.state$.next({
+          ...this.state$.value,
+          loginState: 'logged',
+          token: tokenValid,
+          currentPayload,
+        });
+        this.loadCurrentUser(currentPayload.id);
+      } catch (error) {
+        localStorage.removeItem('frontend');
+      }
     }
   }
   getState(): Observable<State> {
