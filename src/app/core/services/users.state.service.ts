@@ -98,6 +98,7 @@ export class UsersStateService {
   }
 
   setLogin(token: string) {
+    console.log(token);
     const currentPayload = this.jwtDecode(token) as Payload;
     localStorage.setItem('frontend', token);
     this.repoUsers.getById(currentPayload.id).subscribe((user: User) => {
