@@ -30,7 +30,7 @@ import { RouterLink } from '@angular/router';
           routerLinkActive="active"
           src="../../../../assets/angelologo.png"
           alt="logo angelo"
-          width="200"
+          width="201"
         />
       </a>
       <a href="">
